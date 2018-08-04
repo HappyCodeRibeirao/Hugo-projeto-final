@@ -118,7 +118,7 @@
                 <event-block sid="270469182680405">
                     <conditions>
                         <condition id="2" name="Key is down" sid="231897728854925" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
+                            <param id="0" name="Key">65</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="173215848600719" type="System" />
                     </conditions>
@@ -132,7 +132,7 @@
                 <event-block sid="711577570251529">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="475793649252148" type="Keyboard">
-                            <param id="0" name="Key">39 (Right arrow)</param>
+                            <param id="0" name="Key">39</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -144,7 +144,7 @@
                 <event-block sid="680948033528065">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="958747668898420" type="Keyboard">
-                            <param id="0" name="Key">37 (Left arrow)</param>
+                            <param id="0" name="Key">37</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -371,6 +371,37 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="257115117847440" type="ISCOOL" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="112721837453568" title="Caixa de Dialogo">
+            <sub-events>
+                <event-block sid="527352033760757">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="318018195453755" type="CDD1" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="707702015262366" type="System">
+                            <param id="0" name="Seconds">4.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="159027138651246" type="CDD1" />
+                    </actions>
+                </event-block>
+                <event-block sid="547080780649584">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="419983476995576" type="Trigger">
+                            <param id="0" name="Object">Hero</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="955491862740942" type="CDD2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="348311798915930" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="285340164641986" type="CDD2" />
                     </actions>
                 </event-block>
             </sub-events>

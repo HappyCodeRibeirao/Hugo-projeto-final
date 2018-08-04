@@ -46,8 +46,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>424.5</x>
-                        <y>235.5</y>
+                        <x>426</x>
+                        <y>234</y>
                         <z>0</z>
                         <width>873</width>
                         <height>488</height>
@@ -69,14 +69,90 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>833</x>
-                        <y>360</y>
+                        <y>312</y>
                         <z>0</z>
                         <width>37</width>
-                        <height>75</height>
+                        <height>181</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CDD1" uid="4">
+                    <properties>
+                        <text>Tenho que consseguir a minha armadura!</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>95</x>
+                        <y>252</y>
+                        <z>0</z>
+                        <width>180</width>
+                        <height>46</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CDD2" uid="8">
+                    <properties>
+                        <text>Facil Facil</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>485</x>
+                        <y>270</y>
+                        <z>0</z>
+                        <width>83</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Trigger" uid="9">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>523.000183105</x>
+                        <y>339.5</y>
+                        <z>0</z>
+                        <width>31</width>
+                        <height>98</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0.000038842</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -129,8 +205,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>74</x>
-                        <y>353</y>
+                        <x>156</x>
+                        <y>352</y>
                         <z>0</z>
                         <width>53</width>
                         <height>75</height>

@@ -8,10 +8,11 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>32scmt4n56tba</unique-id>
-    <saved-with-version>24400</saved-with-version>
+    <saved-with-version>25900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
@@ -42,7 +43,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">NW.js</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -298,6 +299,20 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CDD1" sid="936244754964049">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CDD2" sid="318670142798441">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Trigger" sid="392409246193166">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="302917637463609" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
