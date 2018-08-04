@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>32scmt4n56tba</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Hero" sid="851575736664448">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="vidas" sid="411363740142489" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="519867771168959">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="685245563853962">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Parado" pingpong="0" repeatcount="1" repeatto="0" sid="969343259891318" speed="5">
+                    <frame duration="1" hotspotX="0.509434" hotspotY="0.506667" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Parado\000.png" />
+                </animation>
+                <animation framecount="13" loop="1" name="Andando" pingpong="0" repeatcount="1" repeatto="0" sid="175306394682481" speed="10">
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\011.png" />
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\000.png" />
+                    <frame duration="1" hotspotX="0.509434" hotspotY="0.506667" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\001.png" />
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\002.png" />
+                    <frame duration="1" hotspotX="0.509434" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\003.png" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\004.png" />
+                    <frame duration="1" hotspotX="0.507463" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\005.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\006.png" />
+                    <frame duration="1" hotspotX="0.508475" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\007.png" />
+                    <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\008.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\009.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\010.png" />
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\011.png" />
+                </animation>
+                <animation framecount="4" loop="0" name="Atacando" pingpong="0" repeatcount="1" repeatto="0" sid="350595611975252" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\000.png" />
+                    <frame duration="1" hotspotX="0.506494" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\001.png" />
+                    <frame duration="1" hotspotX="0.504854" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\003.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Fundinho" sid="305797378729414">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="392352650348499">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="725876774037486" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Assets\Desert\sample.jpg">
+                        <collision-poly>
+                            <point x="0" y="0.838889" />
+                            <point x="1" y="0.826389" />
+                            <point x="1" y="1" />
+                            <point x="0.0015625" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="712983081150825">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Jungle" sid="398810488608572">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="533057990713278">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="234824397263026" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Assets\Jungle.png">
+                        <collision-poly>
+                            <point x="0" y="0.628071" />
+                            <point x="1" y="0.640351" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ISCOOL" sid="907907453496200">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="vidas" sid="107373253846169" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="567733807886091">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="431981021391906">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="139744489517936">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="866979692829058" speed="5">
+                    <frame duration="1" hotspotX="0.492308" hotspotY="0.506849" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_02.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="11" loop="0" name="andar" pingpong="0" repeatcount="1" repeatto="0" sid="124620643971926" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_05.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_06.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.491228" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_08.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_09.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_10.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_11.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_12.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_13.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_14.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_15.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.489362" hotspotY="0.506329" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_16.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="atacar" pingpong="0" repeatcount="1" repeatto="0" sid="523483742799452" speed="5">
+                    <frame duration="1" hotspotX="0.492308" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_19.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_20.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_21.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.492063" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_22.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fimLvl" sid="259435096742134">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="fimDoLv" pingpong="0" repeatcount="1" repeatto="0" sid="363381906617280" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="vida" sid="596893815053879">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="699748694925886" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="hearts.png" />
+    </files-folder>
+</c2project>

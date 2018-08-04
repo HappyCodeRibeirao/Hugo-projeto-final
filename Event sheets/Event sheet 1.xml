@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-group description="" sid="757772150141618" title="General">
+            <sub-events>
+                <event-block sid="865213186302366">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="387813353233927" type="Hero">
+                            <param id="0" name="Object">fimLvl</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="324191114526478" type="System">
+                            <param id="0" name="Layout">Layout 2</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="116056929788539" type="Hero">
+                            <param id="0" name="X">74</param>
+                            <param id="1" name="Y">353</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="280276563803400">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="375421675300477" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="513122838625189" type="Hero">
+                            <param id="0" name="Instance variable">vidas</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="895380203796183" type="vida">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="572423309401583">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="327124496234802" type="Hero">
+                            <param id="0" name="Instance variable">vidas</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="922462177689833" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="789928969671660" title="hero">
+            <sub-events>
+                <event-block sid="292231364673556">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="628834064766455" type="Hero">
+                            <param id="0" name="Object">ISCOOL</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="580852339845756">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="402387932432009" type="Hero">
+                                    <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="136740274155117">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="441248469833410" type="Hero">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="124603252582836">
+                                            <conditions>
+                                                <condition id="-13" name="Pick nth instance" sid="239243323707979" type="System">
+                                                    <param id="0" name="Object">ISCOOL</param>
+                                                    <param id="1" name="Instance">0</param>
+                                                </condition>
+                                                <condition id="-4" name="Trigger once while true" sid="703903535616277" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Flash" id="0" name="Flash" sid="359681134839822" type="ISCOOL">
+                                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                    <param id="2" name="Duration">0.1</param>
+                                                </action>
+                                                <action id="-12" name="Subtract from" sid="345156960358829" type="ISCOOL">
+                                                    <param id="0" name="Instance variable">vidas</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="237063958751823">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="790226598234314" type="Hero">
+                            <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="168460856163921" type="Hero">
+                            <param id="0" name="Animation">&quot;Parado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="270469182680405">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="231897728854925" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="173215848600719" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="317682673343088" type="Hero">
+                            <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="711577570251529">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="475793649252148" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="260698199434290" type="Hero">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="680948033528065">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="958747668898420" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="548334095081646" type="Hero">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="825885005247282">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="906779557632292" type="Hero">
+                            <param id="0" name="Instance variable">vidas</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="236342609070842" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="293638936797464">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="711171101402915" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="539710140105035" type="Hero">
+                            <param id="0" name="Animation">&quot;Andando&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="960822903683718">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="599457541342723" type="Hero" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="145578278803449" type="Hero">
+                            <param id="0" name="Animation">&quot;Parado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="165669596144925">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="308901248578087" type="Hero" />
+                        <condition id="2" inverted="1" name="Is playing" sid="313972946283210" type="Hero">
+                            <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="698797837431796" type="Hero">
+                            <param id="0" name="Animation">&quot;Parado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="649774333336974" title="enemy">
+            <sub-events>
+                <event-block sid="850662040730004">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="361448136251622" type="System">
+                            <param id="0" name="Object">ISCOOL</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="742181122805945">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="823787177616163" type="ISCOOL">
+                                    <param id="0" name="Object">Hero</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="353401379019878">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="851348986816510" type="System">
+                                            <param id="0" name="First value">distance(ISCOOL.X,ISCOOL.Y,Hero.X, Hero.Y)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">40</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="328585502963721" type="ISCOOL">
+                                            <param id="0" name="Animation">&quot;andar&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="857013572113715">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="322078606473980" type="System">
+                                                    <param id="0" name="First value">ISCOOL.X</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Second value">Hero.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="601270127891838" type="ISCOOL">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="296439413887515" type="ISCOOL">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="872444345995504">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="273042928233703" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="148069679357386" type="ISCOOL">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="807131784222890" type="ISCOOL">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="186314796229503">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="960565688188341" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="332769015987588" type="ISCOOL">
+                                            <param id="0" name="Animation">&quot;atacar&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="332575460987103">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="101885943239146" type="System">
+                                            <param id="0" name="First value">ISCOOL.Y</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Hero.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="665729250706306" type="ISCOOL">
+                                            <param id="0" name="Control">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="717346970526562">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="819012400394722" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="718980330039527" type="ISCOOL">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="964293469714846">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="446981839118578" type="ISCOOL">
+                                    <param id="0" name="Object">Hero</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="446239075903154">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="229768847665844" type="ISCOOL">
+                                            <param id="0" name="Animation">&quot;atacar&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="884314727078245">
+                                            <conditions>
+                                                <condition id="3" name="Compare frame" sid="564120700472457" type="ISCOOL">
+                                                    <param id="0" name="Comparison">0</param>
+                                                    <param id="1" name="Number">1</param>
+                                                </condition>
+                                                <condition id="3" name="Compare frame" sid="591745989050845" type="ISCOOL">
+                                                    <param id="0" name="Comparison">0</param>
+                                                    <param id="1" name="Number">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="382848620967465">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="860202230415895" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="852278538436293" type="Hero">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">0.1</param>
+                                                        </action>
+                                                        <action id="-12" name="Subtract from" sid="407000157774241" type="Hero">
+                                                            <param id="0" name="Instance variable">vidas</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="5" name="Set frame" sid="502650543096848" type="vida">
+                                                            <param id="0" name="Frame number">vida.AnimationFrame + 1 &gt;= 4 ? 4 : vida.AnimationFrame + 1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="230009243847458">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="288405507993365" type="ISCOOL">
+                            <param id="0" name="Instance variable">vidas</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="257115117847440" type="ISCOOL" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
