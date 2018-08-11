@@ -404,6 +404,30 @@
                         <action id="-9" name="Destroy" sid="285340164641986" type="CDD2" />
                     </actions>
                 </event-block>
+                <event-block sid="126158879913369">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="865933056584027" type="Hero">
+                            <param id="0" name="Object">triggerCaixa</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="792992657196504" type="tutorial2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="692711557382941">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="734109343948317" type="Hero">
+                            <param id="0" name="Object">triggerCaixa</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="324990148015750" type="tutorial1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>
