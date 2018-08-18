@@ -118,7 +118,7 @@
                 <event-block sid="270469182680405">
                     <conditions>
                         <condition id="2" name="Key is down" sid="231897728854925" type="Keyboard">
-                            <param id="0" name="Key">65</param>
+                            <param id="0" name="Key">65 (A)</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="173215848600719" type="System" />
                     </conditions>
@@ -132,7 +132,7 @@
                 <event-block sid="711577570251529">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="475793649252148" type="Keyboard">
-                            <param id="0" name="Key">39</param>
+                            <param id="0" name="Key">39 (Right arrow)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -144,7 +144,7 @@
                 <event-block sid="680948033528065">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="958747668898420" type="Keyboard">
-                            <param id="0" name="Key">37</param>
+                            <param id="0" name="Key">37 (Left arrow)</param>
                         </condition>
                     </conditions>
                     <actions>
