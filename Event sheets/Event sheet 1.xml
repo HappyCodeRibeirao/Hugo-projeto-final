@@ -118,7 +118,7 @@
                 <event-block sid="270469182680405">
                     <conditions>
                         <condition id="2" name="Key is down" sid="231897728854925" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
+                            <param id="0" name="Key">65</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="173215848600719" type="System" />
                     </conditions>
@@ -132,7 +132,7 @@
                 <event-block sid="711577570251529">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="475793649252148" type="Keyboard">
-                            <param id="0" name="Key">39 (Right arrow)</param>
+                            <param id="0" name="Key">39</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -144,25 +144,13 @@
                 <event-block sid="680948033528065">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="958747668898420" type="Keyboard">
-                            <param id="0" name="Key">37 (Left arrow)</param>
+                            <param id="0" name="Key">37</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="548334095081646" type="Hero">
                             <param id="0" name="State">0</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="825885005247282">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="906779557632292" type="Hero">
-                            <param id="0" name="Instance variable">vidas</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Restart layout" sid="236342609070842" type="System" />
                     </actions>
                 </event-block>
                 <event-block sid="293638936797464">
