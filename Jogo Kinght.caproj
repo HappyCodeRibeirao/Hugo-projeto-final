@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>32scmt4n56tba</unique-id>
-    <saved-with-version>25500</saved-with-version>
+    <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -16,12 +16,14 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -46,7 +48,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">Chrome</prop>
+        <prop name="Preview browser">NW.js</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -69,9 +71,19 @@
             </object-type>
             <object-type name="tutorial1" sid="832317869775885">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="512196038662668">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="tutorial2" sid="377578404862125">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="692283779057232">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="triggerCaixa" sid="408963121581961">
                 <plugin id="Sprite" />
@@ -91,6 +103,11 @@
             </object-type>
             <object-type name="talk_other" sid="551996706337742">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="629956433178821">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="333712677220772" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\PC Computer - Final Fantasy XIV A Realm Reborn - Dialog Boxes\FFXIV_Text_UI\talk_other.png">
@@ -151,29 +168,32 @@
                     <behavior-type name="LineOfSight" sid="567733807886091">
                         <behavior id="LOS" />
                     </behavior-type>
-                    <behavior-type name="8Direction" sid="431981021391906">
-                        <behavior id="EightDir" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="139744489517936">
                         <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="788485406781841">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="266856763137306">
+                        <behavior id="Platform" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="866979692829058" speed="5">
                         <frame duration="1" hotspotX="0.492308" hotspotY="0.506849" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_02.png">
                             <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
+                                <point x="0.811538" y="0.941781" />
+                                <point x="0.238462" y="0.914384" />
+                                <point x="0.165385" y="0.010274" />
+                                <point x="0.761538" y="0.0205479" />
                             </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="11" loop="0" name="andar" pingpong="0" repeatcount="1" repeatto="0" sid="124620643971926" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_05.png">
                             <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
+                                <point x="1" y="0.945206" />
+                                <point x="0.119048" y="0.938356" />
                                 <point x="0" y="0" />
                                 <point x="1" y="0" />
                             </collision-poly>
@@ -295,23 +315,205 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Giant" sid="430375281227567">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="293419691564702" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LineOfSight" sid="819368141050626">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="854383630478211">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="870437890953792">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="391728401367916">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="899583415831554" speed="5">
+                        <frame duration="1" hotspotX="0.491935" hotspotY="0.503937">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503937" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503937" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503937" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503937" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503937" />
+                    </animation>
+                    <animation framecount="6" loop="1" name="andar" pingpong="0" repeatcount="1" repeatto="0" sid="688880017496515" speed="5">
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.50365" />
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.510949" />
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.50365" />
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.50365" />
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.50365" />
+                        <frame duration="1" hotspotX="0.504065" hotspotY="0.50365" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="atacar" pingpong="0" repeatcount="1" repeatto="0" sid="242309631024423" speed="5">
+                        <frame duration="1" hotspotX="0.492308" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_19.png">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_20.png">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_21.png">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.492063" hotspotY="0.505155" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Hugo\Criaturas\Skull\29409_22.png">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Wasp" sid="752229479702918">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="208008143922720" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LineOfSight" sid="851189829416430">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="171317488179600">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="180758471677146">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="860283063675057">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="743557927485891" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="andar" pingpong="0" repeatcount="1" repeatto="0" sid="304223297148943" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="atacar" pingpong="0" repeatcount="1" repeatto="0" sid="281268091202113" speed="5">
+                        <frame duration="1" hotspotX="0.492063" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.507937" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Javali" sid="409755781002734">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="803937712122018" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LineOfSight" sid="278603715817164">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="903889363535300">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="3" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="427083242778282" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="4" loop="1" name="andar" pingpong="0" repeatcount="1" repeatto="0" sid="794538751079272" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="javaliFogo" sid="430424496971213">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="267109442947316">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="967087864252515" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\Enemies\Armored-pig\shoot.png">
+                            <collision-poly>
+                                <point x="0.273438" y="0.4375" />
+                                <point x="0.5" y="0.1625" />
+                                <point x="0.789063" y="0.3375" />
+                                <point x="0.5" y="0.6625" />
+                                <point x="0.328125" y="0.475" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="bg">
             <object-type name="Fundinho" sid="305797378729414">
                 <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="392352650348499">
-                        <behavior id="solid" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="725876774037486" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Assets\Desert\sample.jpg">
+                        <frame duration="1" hotspotX="0.864061" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Assets\Desert\sample.jpg">
                             <collision-poly>
-                                <point x="0" y="0.838889" />
-                                <point x="1" y="0.826389" />
-                                <point x="1" y="1" />
-                                <point x="0.0015625" y="1" />
+                                <point x="0.999575" y="1" />
+                                <point x="0.728122" y="1" />
+                                <point x="0.728122" y="0.826389" />
+                                <point x="1" y="0.838889" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -337,91 +539,578 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="FundinhoRev" sid="278220697364133">
+            <object-type name="jungle" sid="326449720209882">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Solid" sid="953312220862640">
-                        <behavior id="solid" />
+                    <behavior-type name="Bullet" sid="289465206820944">
+                        <behavior id="Bullet" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="405091001233051" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\Assets\Desert\sample.jpg">
-                            <collision-poly>
-                                <point x="0.998438" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0.826389" />
-                                <point x="1" y="0.838889" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="jungle" sid="326449720209882">
-                <plugin id="Sprite" />
-                <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893785608628935" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\jungle.png">
+                        <frame duration="1" hotspotX="0.102" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\jungle.png">
                             <collision-poly>
                                 <point x="0" y="0" />
-                                <point x="1" y="0" />
-                                <point x="1" y="0.5" />
-                                <point x="0.962418" y="0.945498" />
-                                <point x="0.5" y="0.971564" />
-                                <point x="0.0882353" y="0.954976" />
+                                <point x="0.204" y="0" />
+                                <point x="0.204" y="0.5" />
+                                <point x="0.196333" y="0.945498" />
+                                <point x="0.102" y="0.971564" />
+                                <point x="0.018" y="0.954976" />
                                 <point x="0" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="platform" sid="251813761153126">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="256885101527671">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109526503005580" speed="5">
+                        <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                            <collision-poly>
+                                <point x="0.199211" y="0.328125" />
+                                <point x="0.497041" y="0.320313" />
+                                <point x="0.810651" y="0.339844" />
+                                <point x="0.844181" y="0.421875" />
+                                <point x="0.753452" y="0.613281" />
+                                <point x="0.493097" y="0.757813" />
+                                <point x="0.258383" y="0.613281" />
+                                <point x="0.116371" y="0.433594" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platform2" sid="139627609470587">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="702388084401036">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="899143568855281" speed="5">
+                        <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                            <collision-poly>
+                                <point x="0.207101" y="0.308594" />
+                                <point x="0.499013" y="0.316407" />
+                                <point x="0.810651" y="0.332031" />
+                                <point x="0.844181" y="0.421875" />
+                                <point x="0.753452" y="0.613281" />
+                                <point x="0.493097" y="0.757813" />
+                                <point x="0.258383" y="0.613281" />
+                                <point x="0.116371" y="0.433594" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platform4" sid="261358492433337">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="722417254079099">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="425922035965282" speed="5">
+                        <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                            <collision-poly>
+                                <point x="0.17357" y="0.34375" />
+                                <point x="0.495069" y="0.308594" />
+                                <point x="0.832347" y="0.320313" />
+                                <point x="0.844181" y="0.421875" />
+                                <point x="0.753452" y="0.613281" />
+                                <point x="0.493097" y="0.757813" />
+                                <point x="0.258383" y="0.613281" />
+                                <point x="0.116371" y="0.433594" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platform5" sid="526023455684745">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="383872178852163">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="214466411033307" speed="5">
+                        <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                            <collision-poly>
+                                <point x="0.185405" y="0.335937" />
+                                <point x="0.495069" y="0.328126" />
+                                <point x="0.808678" y="0.332031" />
+                                <point x="0.844181" y="0.421875" />
+                                <point x="0.753452" y="0.613281" />
+                                <point x="0.493097" y="0.757813" />
+                                <point x="0.258383" y="0.613281" />
+                                <point x="0.116371" y="0.433594" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platform6" sid="813369189404713">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="191158545493860">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="646863176250398" speed="5">
+                        <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                            <collision-poly>
+                                <point x="0.213018" y="0.335937" />
+                                <point x="0.487179" y="0.339844" />
+                                <point x="0.814596" y="0.335938" />
+                                <point x="0.844181" y="0.421875" />
+                                <point x="0.753452" y="0.613281" />
+                                <point x="0.493097" y="0.757813" />
+                                <point x="0.258383" y="0.613281" />
+                                <point x="0.116371" y="0.433594" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="water" sid="594941401290609">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="516559722730384">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="342123283582992" speed="5">
+                        <frame duration="1" hotspotX="0.0771154" hotspotY="0.3157" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\water(water-marked).png">
+                            <collision-poly>
+                                <point x="0.0440385" y="0.0221843" />
+                                <point x="0.0771154" y="0" />
+                                <point x="0.1075" y="0.0460751" />
+                                <point x="0.154038" y="0.3157" />
+                                <point x="0.154038" y="0.998294" />
+                                <point x="0.000192308" y="0.998294" />
+                                <point x="0.000192308" y="0.3157" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="groundLvl1" sid="408735798695330">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="760572162510171">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="657683330668320" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="tree" sid="998588278747911">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="779297982553462" speed="5">
+                        <frame duration="1" hotspotX="0.502164" hotspotY="0.502128" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\tree.png">
+                            <collision-poly>
+                                <point x="0.25974" y="0.255319" />
+                                <point x="0.497835" y="0.225532" />
+                                <point x="0.770563" y="0.225532" />
+                                <point x="0.874459" y="0.497872" />
+                                <point x="0.65368" y="0.659574" />
+                                <point x="0.497835" y="0.897872" />
+                                <point x="0.445887" y="0.561702" />
+                                <point x="0.246753" y="0.497872" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="tree2" sid="550771046906609">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="307764553299338" speed="5">
+                        <frame duration="1" hotspotX="0.503497" hotspotY="0.501639" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Kenny Assets\kenney-backgroundelements\PNG\tree30.png">
+                            <collision-poly>
+                                <point x="0.27972" y="0.131148" />
+                                <point x="0.496504" y="0" />
+                                <point x="0.538462" y="0.216393" />
+                                <point x="0.629371" y="0.498361" />
+                                <point x="0.573427" y="0.8" />
+                                <point x="0.496504" y="1" />
+                                <point x="0.433566" y="0.796721" />
+                                <point x="0.447552" y="0.498361" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="desertrock" sid="264043324909527">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="164861249145867">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="861508933110231" speed="5">
+                        <frame duration="1" hotspotX="0.496815" hotspotY="0.504202" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\desert-rock1.png">
+                            <collision-poly>
+                                <point x="0.929936" y="0.907563" />
+                                <point x="0.503185" y="0.966387" />
+                                <point x="0.10828" y="0.89916" />
+                                <point x="0.369427" y="0.462185" />
+                                <point x="0.477707" y="0.344538" />
+                                <point x="0.573248" y="0.12605" />
+                                <point x="0.805732" y="0.0588235" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="desertrock2" sid="319867086839784">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="695194437674008">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="798523997139005" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\desert-rock2.png">
+                            <collision-poly>
+                                <point x="0.787109" y="0.488095" />
+                                <point x="0.973633" y="0.627976" />
+                                <point x="0.947266" y="0.839286" />
+                                <point x="0.0527344" y="0.839286" />
+                                <point x="0.0957031" y="0.5" />
+                                <point x="0.150391" y="0.458333" />
+                                <point x="0.310547" y="0.434524" />
+                                <point x="0.513672" y="0.369048" />
+                                <point x="0.594727" y="0.345238" />
+                                <point x="0.703613" y="0.080357" />
+                                <point x="0.795166" y="0.0520832" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platformLeft" sid="679842137604964">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="359171227236993">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="389420000294922" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\png\Tile\14.png">
+                            <collision-poly>
+                                <point x="0.03125" y="0.0430108" />
+                                <point x="0.5" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0.5" y="0.806452" />
+                                <point x="0.304688" y="0.580645" />
+                                <point x="0" y="0.494624" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platformMiddle" sid="135246662786141">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="320112134464433">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="241793203884818" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\png\Tile\15.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="platformRight" sid="222627005074577">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="769047408112763">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="319015240436381" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505376" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\png\Tile\16.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.96875" y="0.0430108" />
+                                <point x="1" y="0.494624" />
+                                <point x="0.695313" y="0.580645" />
+                                <point x="0.5" y="0.806452" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Skeleton" sid="380125863919473">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983385468508790" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.509804" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\png\Objects\Skeleton.png">
+                            <collision-poly>
+                                <point x="0.166667" y="0.490196" />
+                                <point x="0.5" y="0.254902" />
+                                <point x="0.86" y="0.411765" />
+                                <point x="0.913333" y="0.490196" />
+                                <point x="0.98" y="0.941176" />
+                                <point x="0.0133333" y="0.960784" />
+                                <point x="0.146667" y="0.490196" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
-        <object-type name="Hero" sid="851575736664448">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="vidas" sid="411363740142489" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Flash" sid="519867771168959">
-                    <behavior id="Flash" />
-                </behavior-type>
-                <behavior-type name="Platform" sid="685245563853962">
-                    <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="BoundToLayout" sid="955390848978881">
-                    <behavior id="bound" />
-                </behavior-type>
-                <behavior-type name="ScrollTo" sid="539663046624057">
-                    <behavior id="scrollto" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="1" name="Parado" pingpong="0" repeatcount="1" repeatto="0" sid="969343259891318" speed="5">
-                    <frame duration="1" hotspotX="0.509434" hotspotY="0.506667" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Parado\000.png" />
-                </animation>
-                <animation framecount="13" loop="1" name="Andando" pingpong="0" repeatcount="1" repeatto="0" sid="175306394682481" speed="10">
-                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\011.png" />
-                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\000.png" />
-                    <frame duration="1" hotspotX="0.509434" hotspotY="0.506667" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\001.png" />
-                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\002.png" />
-                    <frame duration="1" hotspotX="0.509434" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\003.png" />
-                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\004.png" />
-                    <frame duration="1" hotspotX="0.507463" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\005.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\006.png" />
-                    <frame duration="1" hotspotX="0.508475" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\007.png" />
-                    <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\008.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\009.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\010.png" />
-                    <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Andando\011.png" />
-                </animation>
-                <animation framecount="4" loop="0" name="Atacando" pingpong="0" repeatcount="1" repeatto="0" sid="350595611975252" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\000.png" />
-                    <frame duration="1" hotspotX="0.506494" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\001.png" />
-                    <frame duration="1" hotspotX="0.504854" hotspotY="0.504762" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\002.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Atacando\003.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder name="heroi">
+            <object-type name="Hero" sid="851575736664448">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="411363740142489" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Flash" sid="519867771168959">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="685245563853962">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="955390848978881">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="539663046624057">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Parado" pingpong="0" repeatcount="1" repeatto="0" sid="969343259891318" speed="5">
+                        <frame duration="1" hotspotX="0.513514" hotspotY="0.507042">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.84507" />
+                                <point x="0.462838" y="1" />
+                                <point x="0.00675676" y="0.846831" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HeroAnimacao" sid="397371188285679">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="924090521420593" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Flash" sid="839995616694366">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="Pin" sid="802346071663989">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Parado" pingpong="0" repeatcount="1" repeatto="0" sid="974597631169139" speed="5">
+                        <frame duration="1" hotspotX="0.567568" hotspotY="0.521127" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Hugo\Animations\Hero\Parado\000.png">
+                            <collision-poly>
+                                <point x="0.0304054" y="0.47007" />
+                                <point x="0.0194256" y="0.28037" />
+                                <point x="0.315878" y="0.0765845" />
+                                <point x="0.52027" y="0.00704225" />
+                                <point x="0.986487" y="0.190141" />
+                                <point x="0.859797" y="0.700704" />
+                                <point x="0.797297" y="1" />
+                                <point x="0.683277" y="1" />
+                                <point x="0.567145" y="1" />
+                                <point x="0.430743" y="1" />
+                                <point x="0.131757" y="1" />
+                                <point x="0.177365" y="0.668134" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="Atacando" pingpong="0" repeatcount="1" repeatto="0" sid="576106199066668" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.638095" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Atacando\000.png" />
+                        <frame duration="1" hotspotX="0.506494" hotspotY="0.628571" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Atacando\001.png" />
+                        <frame duration="1" hotspotX="0.504854" hotspotY="0.67619" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Atacando\002.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Atacando\003.png" />
+                    </animation>
+                    <animation framecount="9" loop="0" name="Andando" pingpong="0" repeatcount="1" repeatto="0" sid="521916918380057" speed="8">
+                        <frame duration="1" hotspotX="0.523077" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\000.png">
+                            <collision-poly>
+                                <point x="0.261538" y="0.261824" />
+                                <point x="0.485577" y="0.0244933" />
+                                <point x="0.601923" y="0.0101351" />
+                                <point x="0.821154" y="0.221284" />
+                                <point x="0.830769" y="0.451014" />
+                                <point x="0.617307" y="0.95777" />
+                                <point x="0.319231" y="0.9375" />
+                                <point x="0.374039" y="0.629223" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.553846" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\001.png">
+                            <collision-poly>
+                                <point x="0.261538" y="0.261824" />
+                                <point x="0.485577" y="0.0244933" />
+                                <point x="0.601923" y="0.0101351" />
+                                <point x="0.821154" y="0.221284" />
+                                <point x="0.830769" y="0.451014" />
+                                <point x="0.617307" y="0.95777" />
+                                <point x="0.242308" y="0.89527" />
+                                <point x="0.3625" y="0.63598" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507463" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\006.png">
+                            <collision-poly>
+                                <point x="0.241601" y="0.335225" />
+                                <point x="0.434924" y="0.0539753" />
+                                <point x="0.596662" y="0.0430405" />
+                                <point x="0.781975" y="0.211149" />
+                                <point x="0.727078" y="0.606261" />
+                                <point x="0.622097" y="0.948987" />
+                                <point x="0.197056" y="0.83" />
+                                <point x="0.311369" y="0.578705" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\007.png">
+                            <collision-poly>
+                                <point x="0.33803" y="0.316644" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.781975" y="0.211149" />
+                                <point x="0.805649" y="0.565721" />
+                                <point x="0.622097" y="0.948987" />
+                                <point x="0.305984" y="0.919527" />
+                                <point x="0.416726" y="0.656408" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.508475" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\008.png">
+                            <collision-poly>
+                                <point x="0.316843" y="0.303131" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.932398" y="0.197635" />
+                                <point x="0.805649" y="0.565721" />
+                                <point x="0.622097" y="0.948987" />
+                                <point x="0.305984" y="0.919527" />
+                                <point x="0.34893" y="0.646273" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507246" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\009.png">
+                            <collision-poly>
+                                <point x="0.316843" y="0.303131" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.883485" y="0.180743" />
+                                <point x="0.740432" y="0.569099" />
+                                <point x="0.759778" y="0.920271" />
+                                <point x="0.246202" y="0.97527" />
+                                <point x="0.34893" y="0.646273" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\010.png">
+                            <collision-poly>
+                                <point x="0.316843" y="0.303131" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.883485" y="0.180743" />
+                                <point x="0.740432" y="0.569099" />
+                                <point x="0.759778" y="0.920271" />
+                                <point x="0.256282" y="0.953311" />
+                                <point x="0.34893" y="0.646273" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\011.png">
+                            <collision-poly>
+                                <point x="0.316843" y="0.303131" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.883485" y="0.180743" />
+                                <point x="0.740432" y="0.569099" />
+                                <point x="0.675101" y="0.911825" />
+                                <point x="0.256282" y="0.953311" />
+                                <point x="0.34893" y="0.646273" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Rael\Documents\GitHub\Hugo-projeto-final\Animations\Hero\Andando\012.png">
+                            <collision-poly>
+                                <point x="0.284151" y="0.249077" />
+                                <point x="0.470638" y="0.0489077" />
+                                <point x="0.628805" y="0.029527" />
+                                <point x="0.810408" y="0.201013" />
+                                <point x="0.792355" y="0.591059" />
+                                <point x="0.675101" y="0.911825" />
+                                <point x="0.304359" y="0.921216" />
+                                <point x="0.408545" y="0.654719" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="NPC">
+            <object-type name="fogoNpc" sid="424867704256206">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="vidas" sid="414356106342187" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="191327636407549" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="itens">
+            <object-type name="fogoPonto" sid="137799274922910">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="8" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="242409171829161" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Keyboard" sid="712983081150825">
             <plugin id="Keyboard" />
         </object-type>
@@ -449,131 +1138,36 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="laguinho" sid="194348720297737">
+        <object-type name="SignArrow" sid="174452204463622">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983387117973244" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\laginho.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="laguinho2" sid="947648899009254">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="653540781960579" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Documents\GitHub\Hugo-projeto-final\laginho.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="platform" sid="251813761153126">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109526503005580" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="277019994680869" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505747" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\desert\png\Objects\SignArrow.png">
                         <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
+                            <point x="0.202381" y="0.195402" />
+                            <point x="0.5" y="0.195402" />
+                            <point x="0.761905" y="0.229885" />
+                            <point x="0.75" y="0.494253" />
+                            <point x="0.583333" y="0.597701" />
+                            <point x="0.5" y="0.528736" />
+                            <point x="0.214286" y="0.793103" />
+                            <point x="0" y="0.494253" />
                         </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="platform2" sid="139627609470587">
+        <object-type name="stillfire" sid="906093871172545">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="899143568855281" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666343469268781" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\Fire\still-fire.png">
                         <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="platform3" sid="606697810784102">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="401919156834614" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
-                        <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="platform4" sid="261358492433337">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="425922035965282" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
-                        <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="platform5" sid="526023455684745">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="214466411033307" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
-                        <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="platform6" sid="813369189404713">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="646863176250398" speed="5">
-                    <frame duration="1" hotspotX="0.500986" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\platform.png">
-                        <collision-poly>
-                            <point x="0.151874" y="0.300781" />
-                            <point x="0.497041" y="0.257813" />
-                            <point x="0.857988" y="0.28125" />
-                            <point x="0.844181" y="0.421875" />
-                            <point x="0.753452" y="0.613281" />
-                            <point x="0.493097" y="0.757813" />
-                            <point x="0.258383" y="0.613281" />
-                            <point x="0.116371" y="0.433594" />
+                            <point x="0.0521327" y="0.333333" />
+                            <point x="0.959716" y="0.257576" />
+                            <point x="0.957346" y="0.727273" />
+                            <point x="0.0379147" y="0.757576" />
+                            <point x="0.028436" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>

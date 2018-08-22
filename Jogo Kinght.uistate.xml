@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="1">Layout 2</layout>
-        <layout order="0">Layout 1</layout>
+        <layout active="1" order="0">Layout 1</layout>
+        <layout order="1">Layout 2</layout>
         <event-sheet order="2">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
@@ -23,9 +23,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Texto/" />
-        <folder expanded="0" path="object-folder/inimgos/" />
-        <folder expanded="1" path="object-folder/bg/" />
+        <folder expanded="0" path="object-folder/Texto/" />
+        <folder expanded="1" path="object-folder/inimgos/" />
+        <folder expanded="0" path="object-folder/bg/" />
+        <folder expanded="0" path="object-folder/heroi/" />
+        <folder expanded="1" path="object-folder/NPC/" />
+        <folder expanded="1" path="object-folder/itens/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -38,20 +41,35 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/talk_other2/" />
         <folder expanded="1" path="animation-folder/talk_other3/" />
         <folder expanded="1" path="animation-folder/ISCOOL/" />
+        <folder expanded="1" path="animation-folder/Giant/" />
+        <folder expanded="1" path="animation-folder/Wasp/" />
+        <folder expanded="1" path="animation-folder/Javali/" />
+        <folder expanded="1" path="animation-folder/javaliFogo/" />
         <folder expanded="1" path="animation-folder/Fundinho/" />
         <folder expanded="1" path="animation-folder/Jungle_old/" />
-        <folder expanded="1" path="animation-folder/FundinhoRev/" />
         <folder expanded="1" path="animation-folder/jungle/" />
-        <folder expanded="1" path="animation-folder/Hero/" />
-        <folder expanded="1" path="animation-folder/fimLvl/" />
-        <folder expanded="1" path="animation-folder/vida/" />
-        <folder expanded="1" path="animation-folder/laguinho/" />
-        <folder expanded="1" path="animation-folder/laguinho2/" />
         <folder expanded="1" path="animation-folder/platform/" />
         <folder expanded="1" path="animation-folder/platform2/" />
-        <folder expanded="1" path="animation-folder/platform3/" />
         <folder expanded="1" path="animation-folder/platform4/" />
         <folder expanded="1" path="animation-folder/platform5/" />
         <folder expanded="1" path="animation-folder/platform6/" />
+        <folder expanded="1" path="animation-folder/water/" />
+        <folder expanded="1" path="animation-folder/groundLvl1/" />
+        <folder expanded="1" path="animation-folder/tree/" />
+        <folder expanded="1" path="animation-folder/tree2/" />
+        <folder expanded="1" path="animation-folder/desertrock/" />
+        <folder expanded="1" path="animation-folder/desertrock2/" />
+        <folder expanded="1" path="animation-folder/platformLeft/" />
+        <folder expanded="1" path="animation-folder/platformMiddle/" />
+        <folder expanded="1" path="animation-folder/platformRight/" />
+        <folder expanded="1" path="animation-folder/Skeleton/" />
+        <folder expanded="1" path="animation-folder/Hero/" />
+        <folder expanded="1" path="animation-folder/HeroAnimacao/" />
+        <folder expanded="1" path="animation-folder/fogoNpc/" />
+        <folder expanded="1" path="animation-folder/fogoPonto/" />
+        <folder expanded="1" path="animation-folder/fimLvl/" />
+        <folder expanded="1" path="animation-folder/vida/" />
+        <folder expanded="1" path="animation-folder/SignArrow/" />
+        <folder expanded="1" path="animation-folder/stillfire/" />
     </folders-expanded>
 </c2uistate>
