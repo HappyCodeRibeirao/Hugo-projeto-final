@@ -157,6 +157,32 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="talk_other4" sid="345350670742470">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="921501178869411" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\HappyCode General\HappyCode\Courses\Games 2D Construct\Assets\PC Computer - Final Fantasy XIV A Realm Reborn - Dialog Boxes\FFXIV_Text_UI\talk_other.png">
+                            <collision-poly>
+                                <point x="0.0330882" y="0.126761" />
+                                <point x="0.5" y="0.140845" />
+                                <point x="0.966912" y="0.126761" />
+                                <point x="0.96875" y="0.880282" />
+                                <point x="0.0367647" y="0.859155" />
+                                <point x="0.0496324" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="CDD3" sid="119031077619240">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="CDD4" sid="883402304970175">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Text04" sid="116597777879463">
+                <plugin id="Text" />
+            </object-type>
         </object-folder>
         <object-folder name="inimgos">
             <object-type name="ISCOOL" sid="907907453496200">
@@ -320,20 +346,6 @@
                 <instance-variables>
                     <instance-variable name="vidas" sid="293419691564702" type="number" />
                 </instance-variables>
-                <behaviors>
-                    <behavior-type name="LineOfSight" sid="819368141050626">
-                        <behavior id="LOS" />
-                    </behavior-type>
-                    <behavior-type name="Flash" sid="854383630478211">
-                        <behavior id="Flash" />
-                    </behavior-type>
-                    <behavior-type name="ShadowCaster" sid="870437890953792">
-                        <behavior id="shadowcaster" />
-                    </behavior-type>
-                    <behavior-type name="Platform" sid="391728401367916">
-                        <behavior id="Platform" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="899583415831554" speed="5">
                         <frame duration="1" hotspotX="0.491935" hotspotY="0.503937">
@@ -1106,6 +1118,19 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bloqueio" sid="357514759356882">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="346476867697670">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="800701467115598" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>

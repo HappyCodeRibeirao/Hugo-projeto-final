@@ -128,8 +128,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1897</x>
-                        <y>749</y>
+                        <x>1894</x>
+                        <y>742</y>
                         <z>0</z>
                         <width>917</width>
                         <height>626</height>
@@ -368,6 +368,89 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Giant" uid="15">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <vidas>0</vidas>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2001.616577148</x>
+                        <y>519.052368164</y>
+                        <z>0</z>
+                        <width>263</width>
+                        <height>281</height>
+                        <depth>0</depth>
+                        <hotspotX>0.491935492</hotspotX>
+                        <hotspotY>0.503937006</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="HeroAnimacao" uid="38">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <vidas>0</vidas>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>256</x>
+                        <y>580</y>
+                        <z>0</z>
+                        <width>87</width>
+                        <height>161</height>
+                        <depth>0</depth>
+                        <hotspotX>0.567567587</hotspotX>
+                        <hotspotY>0.521126747</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Bloqueio" uid="53">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2021</x>
+                        <y>426</y>
+                        <z>0</z>
+                        <width>31</width>
+                        <height>431</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -386,37 +469,7 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances>
-                <instance type="HeroAnimacao" uid="38">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <vidas>0</vidas>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Flash" />
-                        <behavior-instance type="Pin" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>254</x>
-                        <y>578</y>
-                        <z>0</z>
-                        <width>87</width>
-                        <height>161</height>
-                        <depth>0</depth>
-                        <hotspotX>0.567567587</hotspotX>
-                        <hotspotY>0.521126747</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-            </instances>
+            <instances />
             <effects />
         </layer>
         <layer name="front" sid="990741995771415">
@@ -607,11 +660,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2058</x>
-                        <y>407</y>
+                        <x>1973</x>
+                        <y>333</y>
                         <z>0</z>
-                        <width>345.947967529</width>
-                        <height>90.302597046</height>
+                        <width>449</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -619,11 +672,11 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="texto3" uid="15">
+                <instance type="texto3" uid="52">
                     <properties>
-                        <text>Encontrei a armadura!!!</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Matura MT Script Capitals,-24,400,0</font>
+                        <text>Me de uma  chave para poder passar!</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-16</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -634,11 +687,38 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1936</x>
-                        <y>389</y>
+                        <x>1881</x>
+                        <y>317</y>
                         <z>0</z>
-                        <width>257</width>
-                        <height>54</height>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text04" uid="54">
+                    <properties>
+                        <text>Pode passar agora...</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1889</x>
+                        <y>312</y>
+                        <z>0</z>
+                        <width>167</width>
+                        <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
