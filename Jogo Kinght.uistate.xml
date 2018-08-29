@@ -10,9 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Layout 1</layout>
+        <layout order="0">Layout 1</layout>
         <layout order="1">Layout 2</layout>
-        <event-sheet order="2">Event sheet 1</event-sheet>
+        <event-sheet active="1" order="2">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -23,12 +23,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Texto/" />
+        <folder expanded="0" path="object-folder/Texto/" />
         <folder expanded="1" path="object-folder/inimgos/" />
         <folder expanded="0" path="object-folder/bg/" />
         <folder expanded="0" path="object-folder/heroi/" />
-        <folder expanded="1" path="object-folder/NPC/" />
-        <folder expanded="1" path="object-folder/itens/" />
+        <folder expanded="0" path="object-folder/NPC/" />
+        <folder expanded="0" path="object-folder/itens/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -41,11 +41,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/talk_other2/" />
         <folder expanded="1" path="animation-folder/talk_other3/" />
         <folder expanded="1" path="animation-folder/talk_other4/" />
+        <folder expanded="1" path="animation-folder/triggerCaixaLvl2/" />
         <folder expanded="1" path="animation-folder/ISCOOL/" />
         <folder expanded="1" path="animation-folder/Giant/" />
         <folder expanded="1" path="animation-folder/Wasp/" />
         <folder expanded="1" path="animation-folder/Javali/" />
         <folder expanded="1" path="animation-folder/javaliFogo/" />
+        <folder expanded="1" path="animation-folder/Chefe/" />
+        <folder expanded="1" path="animation-folder/fogoChefe/" />
         <folder expanded="1" path="animation-folder/Fundinho/" />
         <folder expanded="1" path="animation-folder/Jungle_old/" />
         <folder expanded="1" path="animation-folder/jungle/" />
@@ -64,12 +67,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/platformMiddle/" />
         <folder expanded="1" path="animation-folder/platformRight/" />
         <folder expanded="1" path="animation-folder/Skeleton/" />
+        <folder expanded="1" path="animation-folder/fimLvl/" />
+        <folder expanded="1" path="animation-folder/Bloqueio/" />
+        <folder expanded="1" path="animation-folder/voltaLvl/" />
         <folder expanded="1" path="animation-folder/Hero/" />
         <folder expanded="1" path="animation-folder/HeroAnimacao/" />
         <folder expanded="1" path="animation-folder/fogoNpc/" />
         <folder expanded="1" path="animation-folder/fogoPonto/" />
-        <folder expanded="1" path="animation-folder/Bloqueio/" />
-        <folder expanded="1" path="animation-folder/fimLvl/" />
         <folder expanded="1" path="animation-folder/vida/" />
         <folder expanded="1" path="animation-folder/SignArrow/" />
         <folder expanded="1" path="animation-folder/stillfire/" />

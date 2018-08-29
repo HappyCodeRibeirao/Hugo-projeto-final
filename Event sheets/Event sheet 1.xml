@@ -5,7 +5,8 @@
     <events>
         <variable constant="0" name="NpcFogo" sid="957840319194495" static="0" type="number">0</variable>
         <variable constant="0" name="speed" sid="358306527514830" static="0" type="number">200</variable>
-        <variable constant="0" name="Verificador" sid="723645255763757" static="0" type="text">F</variable>
+        <variable constant="0" name="lvl" sid="117943156012295" static="0" type="number">1</variable>
+        <variable constant="0" name="Verificador" sid="723645255763757" static="0" type="text">T</variable>
         <event-group description="" sid="757772150141618" title="General">
             <sub-events>
                 <event-block sid="865213186302366">
@@ -24,19 +25,39 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="442397181454509">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="673695390287324" type="Hero">
+                            <param id="0" name="Object">voltaLvl</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="121626965748552" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="599435679708556" type="Hero">
+                            <param id="0" name="X">4712</param>
+                            <param id="1" name="Y">800</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="794735062125815" type="HeroAnimacao">
+                            <param id="0" name="Pin to">Hero</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="280276563803400">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="375421675300477" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="513122838625189" type="Hero">
+                        <action id="-10" name="Set value" sid="826735189054589" type="Hero">
                             <param id="0" name="Instance variable">vidas</param>
                             <param id="1" name="Value">4</param>
                         </action>
-                        <action id="5" name="Set frame" sid="895380203796183" type="vida">
+                        <action id="5" name="Set frame" sid="412912147946078" type="vida">
                             <param id="0" name="Frame number">0</param>
                         </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="534183906406966" type="HeroAnimacao">
+                        <action behavior="Pin" id="0" name="Pin to object" sid="928077701517568" type="HeroAnimacao">
                             <param id="0" name="Pin to">Hero</param>
                             <param id="1" name="Mode">0</param>
                         </action>
@@ -138,81 +159,215 @@
         </event-group>
         <event-group description="" sid="649774333336974" title="enemy">
             <sub-events>
-                <event-group description="" sid="209317984238652" title="Javali">
+                <event-group description="" sid="625591046058450" title="Chefe">
                     <sub-events>
-                        <event-block sid="212152550703164">
+                        <event-block sid="719440960894162">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="169080206286332" type="System">
-                                    <param id="0" name="Object">Javali</param>
+                                <condition id="-7" name="Compare instance variable" sid="418626809022454" type="Chefe">
+                                    <param id="0" name="Instance variable">vidas</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="823206701868305" type="Chefe">
+                                    <param id="0" name="Animation">&quot;morte&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="886288932970914" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="847925065271432" type="Chefe" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="364029892860245">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="781657465933663" type="fogoChefe">
+                                    <param id="0" name="Object">Hero</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="675560613992992" type="HeroAnimacao">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="264068765016118" type="HeroAnimacao">
+                                    <param id="0" name="Degrees">0.1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="246803955381553" type="Hero">
+                                    <param id="0" name="Instance variable">vidas</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="794737703555713" type="vida">
+                                    <param id="0" name="Frame number">vida.AnimationFrame + 1 &gt;= 4 ? 4 : vida.AnimationFrame + 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="634857126107729">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="841892573912991" type="fogoChefe" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="209737991480542">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="867453898336663" type="fogoChefe">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="554273169530754" type="fogoChefe">
+                                            <param id="0" name="Degrees">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="139489835789763">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="973933738363171" type="Chefe">
+                                    <param id="0" name="Object">Hero</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="942850644703526">
+                                <event-block sid="847850857765655">
                                     <conditions>
-                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="206104951936849" type="Javali">
-                                            <param id="0" name="Object">Hero</param>
+                                        <condition id="-8" name="Compare two values" sid="270759113220955" type="System">
+                                            <param id="0" name="First value">distance(Chefe.X,0,Hero.X, 0)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">600</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="323855009330609">
+                                        <event-block sid="626280913544893">
                                             <conditions>
-                                                <condition id="-8" name="Compare two values" sid="648580778163644" type="System">
-                                                    <param id="0" name="First value">distance(Javali.X,Javali.Y,Hero.X, Hero.Y)</param>
-                                                    <param id="1" name="Comparison">4</param>
-                                                    <param id="2" name="Second value">40</param>
-                                                </condition>
-                                                <condition id="-6" name="Every X seconds" sid="417207119037354" type="System">
-                                                    <param id="0" name="Interval (seconds)">2</param>
+                                                <condition id="-6" name="Every X seconds" sid="848633916340487" type="System">
+                                                    <param id="0" name="Interval (seconds)">5</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Spawn another object" sid="872939000759684" type="Javali">
-                                                    <param id="0" name="Object">javaliFogo</param>
+                                                <action id="0" name="Spawn another object" sid="780830176612132" type="Chefe">
+                                                    <param id="0" name="Object">fogoChefe</param>
                                                     <param id="1" name="Layer">&quot;player&quot;</param>
                                                     <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="478577317121425" type="Chefe">
+                                                    <param id="0" name="Animation">&quot;atirando&quot;</param>
+                                                    <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="445405255383635">
+                                <event-block sid="786382516140190">
                                     <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="210145383431977" type="Javali">
-                                            <param id="0" name="Object">Hero</param>
+                                        <condition id="-8" name="Compare two values" sid="439247392675034" type="System">
+                                            <param id="0" name="First value">distance(Chefe.X,0,Hero.X, 0)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">600</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="142433612796218">
-                                            <conditions>
-                                                <condition id="2" name="Is playing" sid="147906908922633" type="Javali">
-                                                    <param id="0" name="Animation">&quot;andar&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="343126486766324">
-                                                    <conditions>
-                                                        <condition id="-4" name="Trigger once while true" sid="308223679306717" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-18" name="Rotate clockwise" sid="213160542128547" type="HeroAnimacao">
-                                                            <param id="0" name="Degrees">0.1</param>
-                                                        </action>
-                                                        <action id="-12" name="Subtract from" sid="220073567669030" type="Hero">
-                                                            <param id="0" name="Instance variable">vidas</param>
-                                                            <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action id="5" name="Set frame" sid="471958352699912" type="vida">
-                                                            <param id="0" name="Frame number">vida.AnimationFrame + 1 &gt;= 4 ? 4 : vida.AnimationFrame + 1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="539036375285412" type="Chefe">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="774474057198397" type="Chefe">
+                                            <param id="0" name="Animation">&quot;andando&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="628881118745219">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="832679512640435" type="Chefe">
+                            <param id="0" name="Object">Hero</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="838386206925424">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="295586421254323" type="HeroAnimacao">
+                                    <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="647602328007024" type="Chefe">
+                                    <param id="0" name="Instance variable">vidas</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="101294495051456" type="Chefe">
+                                    <param id="0" name="Animation">&quot;hurt&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="209317984238652" title="Javali">
+                    <sub-events>
+                        <event-block sid="942850644703526">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="206104951936849" type="Javali">
+                                    <param id="0" name="Object">Hero</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="323855009330609">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="648580778163644" type="System">
+                                            <param id="0" name="First value">distance(Javali.X,Javali.Y,Hero.X, Hero.Y)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">40</param>
+                                        </condition>
+                                        <condition id="-6" name="Every X seconds" sid="417207119037354" type="System">
+                                            <param id="0" name="Interval (seconds)">2.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="872939000759684" type="Javali">
+                                            <param id="0" name="Object">javaliFogo</param>
+                                            <param id="1" name="Layer">&quot;player&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="445405255383635">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="210145383431977" type="Javali">
+                                    <param id="0" name="Object">Hero</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="142433612796218">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="173012598298852" type="HeroAnimacao">
+                                            <param id="0" name="Animation">&quot;Atacando&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="692480912050365" type="Javali">
+                                            <param id="0" name="Instance variable">vidas</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="273119694232168" type="Javali">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -737,6 +892,29 @@
                         <action id="-9" name="Destroy" sid="542475862845365" type="triggerCaixa" />
                     </actions>
                 </event-block>
+                <event-block sid="964987039580664">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="356508556755127" type="Hero">
+                            <param id="0" name="Object">triggerCaixaLvl2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="753238857545212" type="talk_other2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="529083187262460" type="texto2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="901278372728281" type="System">
+                            <param id="0" name="Seconds">3.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="352725879930562" type="texto2" />
+                        <action id="-15" name="Set visible" sid="803522784392386" type="talk_other2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="922880000984353" type="triggerCaixaLvl2" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="646921309335795" title="BackGround">
@@ -799,7 +977,7 @@
                                         <action id="-16" name="Wait" sid="662240524072999" type="System">
                                             <param id="0" name="Seconds">3.0</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="417152005981458" type="CDD3">
+                                        <action id="-15" name="Set visible" sid="417152005981458" type="texto3">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="704445966929905" type="talk_other3">
@@ -812,10 +990,13 @@
                                         <condition id="-14" name="Compare variable" sid="401898638558752" type="System">
                                             <param id="0" name="Variable">Verificador</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;F&quot;</param>
+                                            <param id="2" name="Value">&quot;T&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="397561786212282" type="Hero">
+                                            <param id="0" name="Input">1</param>
+                                        </action>
                                         <action id="-15" name="Set visible" sid="423177130135587" type="talk_other3">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
@@ -825,11 +1006,15 @@
                                         <action id="-16" name="Wait" sid="928762370330223" type="System">
                                             <param id="0" name="Seconds">3.0</param>
                                         </action>
+                                        <action id="-9" name="Destroy" sid="686117725798756" type="Bloqueio" />
                                         <action id="-15" name="Set visible" sid="799451443484810" type="Text04">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="453894822264349" type="talk_other3">
                                             <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="963367416196460" type="Hero">
+                                            <param id="0" name="Input">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -882,6 +1067,10 @@
                                         <action id="-9" name="Destroy" sid="734230053082403" type="CDD3" />
                                         <action id="-15" name="Set visible" sid="952670474802204" type="talk_other4">
                                             <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="632551011759446" type="System">
+                                            <param id="0" name="Variable">Verificador</param>
+                                            <param id="1" name="Value">&quot;T&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

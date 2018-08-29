@@ -175,35 +175,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="desertrock" uid="36">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Solid">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>356</x>
-                        <y>880</y>
-                        <z>0</z>
-                        <width>249.750228882</width>
-                        <height>189.301132202</height>
-                        <depth>0</depth>
-                        <hotspotX>0.496815294</hotspotX>
-                        <hotspotY>0.50420171</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="desertrock2" uid="37">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -400,8 +371,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>76</x>
-                        <y>832</y>
+                        <x>81</x>
+                        <y>828</y>
                         <z>0</z>
                         <width>87</width>
                         <height>161</height>
@@ -596,8 +567,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2005</x>
-                        <y>544</y>
+                        <x>2125</x>
+                        <y>535</y>
                         <z>0</z>
                         <width>99.306114197</width>
                         <height>191.518936157</height>
@@ -644,8 +615,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1980</x>
-                        <y>693</y>
+                        <x>2100</x>
+                        <y>684</y>
                         <z>0</z>
                         <width>128</width>
                         <height>93</height>
@@ -673,8 +644,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2108</x>
-                        <y>693</y>
+                        <x>2228</x>
+                        <y>684</y>
                         <z>0</z>
                         <width>128</width>
                         <height>93</height>
@@ -702,8 +673,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2235</x>
-                        <y>693</y>
+                        <x>2355</x>
+                        <y>684</y>
                         <z>0</z>
                         <width>128</width>
                         <height>93</height>
@@ -861,8 +832,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2142</x>
-                        <y>624</y>
+                        <x>2262</x>
+                        <y>615</y>
                         <z>0</z>
                         <width>150</width>
                         <height>51</height>
@@ -899,17 +870,6 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>Window left</left-edge>
-                                <top-edge>Window top</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1109,10 +1069,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2240</x>
-                        <y>375</y>
+                        <x>2147</x>
+                        <y>694</y>
                         <z>0</z>
-                        <width>544</width>
+                        <width>588</width>
                         <height>142</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -1123,9 +1083,9 @@
                 </instance>
                 <instance type="CDD3" uid="50">
                     <properties>
-                        <text>boa</text>
+                        <text>Obrigada! Aqui tem um chave. Ele pode te-ajudar no faturo.</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-16</font>
+                        <font>Matura MT Script Capitals,-26.4,400,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -1136,11 +1096,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2163</x>
-                        <y>356</y>
+                        <x>1960</x>
+                        <y>657</y>
                         <z>0</z>
-                        <width>47</width>
-                        <height>30</height>
+                        <width>390.065917969</width>
+                        <height>92.539245605</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1150,9 +1110,9 @@
                 </instance>
                 <instance type="CDD4" uid="51">
                     <properties>
-                        <text>Seu inutil</text>
+                        <text>Eu preciso seu ajuda! Meus tres fogos da vida sumiu! Voce pode ajudar achar eles?</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-16</font>
+                        <font>Matura MT Script Capitals,-26.4,400,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -1163,11 +1123,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2033</x>
-                        <y>356</y>
+                        <x>1914</x>
+                        <y>655</y>
                         <z>0</z>
-                        <width>92</width>
-                        <height>31</height>
+                        <width>505.655273438</width>
+                        <height>81.926300049</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

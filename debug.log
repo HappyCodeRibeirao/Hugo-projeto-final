@@ -7,3 +7,4 @@
 [0817/222516.984:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0817/223125.136:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0818/185908.284:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0827/125854.682:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: The URL does not use a recognized protocol (0x2ee6)
