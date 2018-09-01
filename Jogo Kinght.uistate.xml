@@ -26,8 +26,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/Texto/" />
         <folder expanded="1" path="object-folder/inimgos/" />
         <folder expanded="0" path="object-folder/bg/" />
-        <folder expanded="0" path="object-folder/heroi/" />
-        <folder expanded="0" path="object-folder/NPC/" />
+        <folder expanded="1" path="object-folder/heroi/" />
+        <folder expanded="1" path="object-folder/NPC/" />
         <folder expanded="0" path="object-folder/itens/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
@@ -70,12 +70,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/fimLvl/" />
         <folder expanded="1" path="animation-folder/Bloqueio/" />
         <folder expanded="1" path="animation-folder/voltaLvl/" />
+        <folder expanded="1" path="animation-folder/spikes/" />
+        <folder expanded="1" path="animation-folder/cactus/" />
+        <folder expanded="1" path="animation-folder/sand/" />
         <folder expanded="1" path="animation-folder/Hero/" />
         <folder expanded="1" path="animation-folder/HeroAnimacao/" />
-        <folder expanded="1" path="animation-folder/fogoNpc/" />
+        <folder expanded="1" path="animation-folder/desertoNpc/" />
+        <folder expanded="1" path="animation-folder/baby/" />
         <folder expanded="1" path="animation-folder/fogoPonto/" />
         <folder expanded="1" path="animation-folder/vida/" />
         <folder expanded="1" path="animation-folder/SignArrow/" />
         <folder expanded="1" path="animation-folder/stillfire/" />
+        <folder expanded="1" path="animation-folder/platformSine/" />
     </folders-expanded>
 </c2uistate>
